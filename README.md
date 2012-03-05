@@ -14,3 +14,14 @@ The format for sending issues should be an **address** followed by an
 These issues will then be added to SeeClickFix through the [Open311
 API](http://seeclickfix.com/open311). Text messages will be received
 using [SMSified](https://smsified.com).
+
+
+Configuration
+-------------
+
+The application makes use of several enviornment variables -- which you
+should know about if you're planning on extending or adapting it.
+Currently, to get set up on Heroku, here are the ones used.
+
+    heroku config:add OPEN311_API_KEY=seeclickfix_api_key
+    heroku config:add SMS_USER=smsified_user SMS_PASS=smsified_pass
