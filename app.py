@@ -7,7 +7,9 @@ This file creates your application.
 """
 
 import os
-from flask import Flask, render_template, request, redirect, url_for
+from simplejson import loads
+from flask import Flask, render_template, request, redirect
+from .sms import process
 
 app = Flask(__name__)
 
@@ -27,10 +29,19 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/about/')
-def about():
-    """Render the website's about page."""
-    return render_template('about.html')
+@app.route('/issue', methods=['GET', 'POST'])
+def issue():
+    """Receive an incoming SMS message issue."""
+    if request.method == 'POST':
+        try:
+            data = loads(request.data)
+            text = data['inboundSMSMessageNotification']['inboundSMSMessage']
+        except:
+            return "Error."
+        finally:
+            process(text)
+            return 'Success!'
+    return redirect('/')
 
 
 ###
