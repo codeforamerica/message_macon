@@ -9,7 +9,8 @@ This file creates your application.
 import os
 from simplejson import loads
 from flask import Flask, render_template, request, redirect
-from .sms import process
+
+from sms import process
 
 app = Flask(__name__)
 
