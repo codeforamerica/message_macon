@@ -1,5 +1,5 @@
-Fix Macon
-=========
+Message Macon
+=============
 
 With [SeeClickFix](http://seeclickfix.com/macon) now integrated with the
 City of Macon's Public Works department, citizens should be able to

@@ -6,13 +6,21 @@ import requests as req
 SEND = "https://api.smsified.com/v1/smsmessaging/outbound/4782467248/requests"
 
 
-def authentication():
+class AuthenticationError(Exception):
+    pass
+
+
+def auth():
     """
     Get SMSified username and password authentication from environment
     variables.
     """
-    username = os.environ['SMS_USER']
-    password = os.environ['SMS_PASS']
+    try:
+        username = os.environ['SMS_USER']
+        password = os.environ['SMS_PASS']
+    except KeyError:
+        message = "You haven't set the SMS_USER and SMS_PASS env variables."
+        raise AuthenticationError(message)
     return (username, password)
 
 
@@ -26,11 +34,11 @@ def process(text):
 
 def respond(number):
     """Send an SMS text message."""
-    auth = authentication()
+    user_pass = auth()
     number = number.replace('-', '')
     message = "Thanks for reporting your issue!"
     params = {'address': number, 'message': message}
-    sms = req.post(SEND, auth=auth, params=params)
+    sms = req.post(SEND, auth=user_pass, params=params)
     return sms
 
 
