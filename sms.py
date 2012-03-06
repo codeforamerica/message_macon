@@ -4,8 +4,6 @@ import os
 import requests as req
 from three import Three
 
-SEND = "https://api.smsified.com/v1/smsmessaging/outbound/4782467248/requests"
-
 
 class AuthenticationError(Exception):
     """
@@ -43,7 +41,8 @@ def respond(number):
     number = number.replace('-', '')
     message = "Thanks for reporting your issue!"
     params = {'address': number, 'message': message}
-    sms = req.post(SEND, auth=user_pass, params=params)
+    send = "https://api.smsified.com/v1/smsmessaging/outbound/4782467248/requests"
+    sms = req.post(send, auth=user_pass, params=params)
     return sms
 
 
