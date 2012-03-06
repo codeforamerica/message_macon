@@ -2,11 +2,16 @@
 
 import os
 import requests as req
+from three import Three
 
 SEND = "https://api.smsified.com/v1/smsmessaging/outbound/4782467248/requests"
 
 
 class AuthenticationError(Exception):
+    """
+    Error should be raised when the SMSified username and password
+    aren't known.
+    """
     pass
 
 
