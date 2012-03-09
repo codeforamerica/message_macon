@@ -7,7 +7,7 @@ from mock import Mock
 
 import sms
 from app import app
-from sms import process
+from sms import process, find_address, AddressError
 
 
 class TestApp(unittest.TestCase):
@@ -24,10 +24,6 @@ class TestApp(unittest.TestCase):
         rv = self.app.get('/issue')
         self.assertEquals(rv.status_code, 302)
 
-    def test_404_page(self):
-        rv = self.app.get('/i-am-not-found/')
-        self.assertEquals(rv.status_code, 404)
-
     def test_static_text_file_request(self):
         rv = self.app.get('/robots.txt')
         self.assertTrue(rv.data)
@@ -38,16 +34,22 @@ class ProcessTextMessage(unittest.TestCase):
 
     def setUp(self):
         sms.respond = Mock()
-        sms.seeclickfix = Mock()
 
-    def test_against_a_fake_text_message(self):
+    def test_fails_against_non_address_text_message(self):
         text = {
             'senderAddress': 'tel:+478-555-5555',
             'message': 'This is a test.'
         }
-        process(text)
-        sms.respond.assert_called_with('478-555-5555')
-        sms.seeclickfix.assert_called_with('This is a test.')
+        self.assertRaises(AddressError, process, text)
+
+
+class FindAddress(unittest.TestCase):
+
+    def test_can_parse_out_an_address(self):
+        text = "123 Any St. Broken garbage lid on trash can."
+        response = find_address(text)
+        expected = ('123 Any St Macon, GA', text)
+        self.assertEqual(response, expected)
 
 
 if __name__ == '__main__':
