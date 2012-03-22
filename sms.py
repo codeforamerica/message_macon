@@ -40,7 +40,10 @@ def process(text):
     number = text['senderAddress'].lstrip('tel:+')
     message = text['message']
     address, description = find_address(message)
-    macon.post('0', address=address, description=description, phone=number)
+    post = macon.post('0', address=address, description=description,
+                      phone=number)
+    # Process post request and get token.
+    print post
     return respond(number)
 
 
