@@ -39,21 +39,24 @@ def process(text):
     """Process an incoming text message."""
     number = text['senderAddress'].lstrip('tel:+')
     message = text['message']
-    address, message = find_address(message)
-    request = macon.post('0', address=address, description=message,
-                         phone=number)
+    address, description = find_address(message)
+    macon.post('0', address=address, description=description, phone=number)
     return respond(number)
 
 
 def find_address(message):
     """Parse the address from a text message."""
     data = message.split('. ')
-    if len(data) == 1:
+    length = len(data)
+    if length == 1:
         raise AddressError("Can't process the address from your text message.")
+    elif length == 2:
+        description = data[1]
     else:
-        street = data[0]
+        description = '. '.join(data[1:])
+    street = data[0]
     address = street + ' Macon, GA'
-    return address, message
+    return address, description
 
 
 def respond(number):
