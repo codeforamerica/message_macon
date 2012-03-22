@@ -43,7 +43,7 @@ def process(text):
     post = macon.post('0', address=address, description=description,
                       phone=number)
     # Process post request and get token.
-    print post
+    print dir(post)
     return respond(number)
 
 
