@@ -2,10 +2,10 @@
 
 import os
 import requests as req
-from three import Three
+import three
 
 # Create a Three instance specific to Macon.
-macon = Three('http://seeclicktest.com/open311/v2')
+macon = three.dev('http://seeclicktest.com/open311/v2')
 
 
 class AddressError(Exception):
