@@ -39,11 +39,9 @@ def process(text):
     """Process an incoming text message."""
     number = text['senderAddress'].lstrip('tel:+')
     message = text['message']
-    address, description = find_address(message)
-    post = macon.post('0', address=address, description=description,
-                      phone=number)
-    # Process post request and get token.
-    print dir(post)
+    address, info = find_address(message)
+    post = macon.post('0', address=address, description=info, phone=number)
+    # Log the POST request to SeeClickFix.
     print post
     return respond(number)
 
