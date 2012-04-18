@@ -44,6 +44,7 @@ def process(text):
                       phone=number)
     # Process post request and get token.
     print dir(post)
+    print post
     return respond(number)
 
 
