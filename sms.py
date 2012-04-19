@@ -4,8 +4,12 @@ import os
 import requests as req
 import three
 
-# Create a Three instance specific to Macon.
-macon = three.dev('http://seeclicktest.com/open311/v2')
+
+if 'PRODUCTION_ENV' in os.environ:
+    # Then we'll use the actual SeeClickFix endpoint.
+    macon = three.city('macon')
+else:
+    macon = three.dev('http://seeclicktest.com/open311/v2')
 
 
 class AddressError(Exception):
