@@ -1,0 +1,58 @@
+@import "less/mixins.less";
+
+@green: #64a32f;
+@light: #f7faf4;
+
+h2{
+    padding-bottom: 5px;
+}
+p{
+    padding-right: 5px;
+}
+
+.green{
+    #gradient > .vertical(@green, darken(@green, 10%));
+    .row{
+        height: 450px;
+        position: relative;
+        h1{
+            color: @light;
+            font-size: 86px;
+            line-height: .9em;
+            margin-top: 125px;
+            text-shadow: 1px 1px 3px darken(@green, 5%);
+        }
+        img{
+            bottom: 0;
+            position: absolute;
+        }
+    }
+    .tagline{
+        color: @light;
+        font-size: 24px;
+        font-weight: 300;
+        margin-top: 32px;
+        text-shadow: 1px 1px 1px darken(@green, 15%);
+    }
+    .gradient{
+        #gradient > .vertical(darken(@green, 10%), darken(@green, 15%));
+        height: 10px;
+        margin-top: -10px;
+        z-index: 500;
+    }
+}
+
+.features{
+    #gradient > .vertical(#333, #111);
+    color: #fcfff9;
+    padding: 50px 0;
+    text-shadow: 1px 1px 2px #111;
+}
+
+.messages{
+    #gradient > .vertical(@light, #fff);
+    padding: 25px 0 50px;
+    .row{
+        margin-top:25px;
+    }
+}
