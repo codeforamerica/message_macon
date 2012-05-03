@@ -1,7 +1,7 @@
 @import "less/mixins.less";
 
 @green: #64a32f;
-@light: #f7faf4;
+@light: #fcfff9;
 
 body{
     overflow-x: hidden;
@@ -30,7 +30,8 @@ body{
         position: relative;
         h1{
             color: #fff;
-            font-size: 88px;
+            font-size: 92px;
+            font-weight: 300;
             line-height: .9em;
             margin-top: 125px;
             text-shadow: 1px 1px 3px darken(@green, 8%);
@@ -41,7 +42,7 @@ body{
         }
     }
     .tagline{
-        color: @light;
+        color: #f7faf4;
         font-size: 24px;
         font-weight: 300;
         margin-top: 32px;
@@ -57,7 +58,7 @@ body{
 
 .features{
     #gradient > .vertical(#333, #111);
-    color: #fcfff9;
+    color: @light;
     padding: 50px 0;
     text-shadow: 1px 1px 2px #111;
 }
@@ -122,9 +123,29 @@ footer{
             padding-top: 25px;
         }
     }
-    .green{
+    .green .row{
+        height: 350px;
+    }
+    .features{
+        padding: 0 0 25px;
+    }
+    .messages, footer{
+        padding: 25px 0;
+    }
+    footer img{
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 787px) {
+    body{
+        padding: 0;
         .row{
-            height: 300px;
+            margin: 0 auto;
+            width: 96%;
+        }
+        h2{
+            padding-top: 25px;
         }
     }
     .features{
@@ -133,9 +154,7 @@ footer{
     .messages, footer{
         padding: 25px 0;
     }
-    footer{
-        img{
-            max-width: 200px;
-        }
+    footer img{
+        max-width: 200px;
     }
 }
