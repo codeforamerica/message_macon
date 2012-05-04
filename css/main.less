@@ -79,10 +79,18 @@ footer{
     #gradient > .vertical(@green, darken(@green, 10%));
     border-top: 1px solid darken(@green, 5%);
     padding: 50px 0;
+    position: relative;
     img{
         display: block;
         margin: 0 auto;
         max-width: 300px;
+    }
+    .gradient{
+        #gradient > .vertical(darken(@green, 5%), @green);
+        height: 10px;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 }
 
