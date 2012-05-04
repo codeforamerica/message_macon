@@ -6,6 +6,7 @@
 body{
     overflow-x: hidden;
     h2{
+        font-weight: 600;
         padding-bottom: 5px;
     }
     p{
@@ -156,5 +157,31 @@ footer{
     }
     footer img{
         max-width: 200px;
+    }
+}
+
+/*
+ * Large desktop
+ */
+@media (min-width: 1200px) {
+    .green{
+        #gradient > .vertical(@green, darken(@green, 10%));
+        .row{
+            height: 475px;
+            h1{
+                font-size: 104px;
+            }
+        }
+        .tagline{
+            font-size: 28px;
+            margin-top: 36px;
+        }
+    }
+    h2{
+        font-size: 27px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 20px;
     }
 }
