@@ -14,43 +14,43 @@ body{
     }
 }
 
-.ribbon{
-    background: darken(@green, 5%);
-    height: 8px;
-}
-
-.bottom-ribbon{
-    background: darken(@green, 15%);
-    height: 8px;
+header{
+    #gradient > .horizontal(rgba(255, 255, 255, .95), rgba(255, 255, 255, .5));
+    position: absolute;
+    width: 100%;
+    h1{
+        font-size: 28px;
+        font-weight: 300;
+        padding: 10px 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+        top: 0;
+        z-index: 100;
+    }
 }
 
 .green{
-    #gradient > .vertical(@green, darken(@green, 10%));
+    background: url(/img/trash.png) no-repeat center center;
+    background-size: cover;
     .row{
         height: 450px;
         position: relative;
-        h1{
-            color: #fff;
-            font-size: 92px;
-            font-weight: 300;
-            line-height: .9em;
-            margin-top: 125px;
-            text-shadow: 1px 1px 3px darken(@green, 8%);
-        }
         img{
             bottom: 0;
             position: absolute;
         }
     }
     .tagline{
-        color: #f7faf4;
-        font-size: 24px;
-        font-weight: 300;
-        margin-top: 32px;
-        text-shadow: 1px 1px 1px darken(@green, 15%);
+        margin-top: 250px;
+        h3{
+            color: #f7faf4;
+            font-size: 36px;
+            font-weight: 300;
+            line-height: 1.2em;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+        }
     }
     .gradient{
-        #gradient > .vertical(darken(@green, 10%), darken(@green, 15%));
+        #gradient > .vertical(rgba(0, 0, 0, 0), rgba(0, 0, 0, .15));
         height: 10px;
         margin-top: -10px;
         z-index: 500;
@@ -94,6 +94,12 @@ footer{
     }
 }
 
+.bottom-ribbon{
+    background: darken(@green, 15%);
+    height: 8px;
+}
+
+
 /*
  * Tablet
  */
@@ -101,17 +107,12 @@ footer{
     .green{
         .row{
             height: 350px;
-            h1{
-                font-size: 76px;
-                margin-top: 75px;
-            }
             img{
                 width: 350px;
             }
         }
-        .tagline{
-            font-size: 24px;
-            margin-top: 32px;
+        .tagline h3{
+            font-size: 26px;
         }
     }
     footer{
@@ -173,16 +174,8 @@ footer{
  */
 @media (min-width: 1200px) {
     .green{
-        #gradient > .vertical(@green, darken(@green, 10%));
         .row{
             height: 475px;
-            h1{
-                font-size: 104px;
-            }
-        }
-        .tagline{
-            font-size: 28px;
-            margin-top: 36px;
         }
     }
     h2{
