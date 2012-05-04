@@ -5,13 +5,14 @@
 
 body{
     overflow-x: hidden;
-    h2{
-        font-weight: 600;
-        padding-bottom: 5px;
-    }
-    p{
-        padding-right: 5px;
-    }
+}
+h2{
+    font-size: 28px;
+    font-weight: 300;
+    padding-bottom: 8px;
+}
+p{
+    padding-right: 5px;
 }
 
 header{
@@ -104,6 +105,9 @@ footer{
  * Tablet
  */
 @media (max-width: 979px) and (min-width: 768px){
+    h2{
+        font-size: 24px;
+    }
     .green{
         .row{
             height: 350px;
@@ -111,14 +115,39 @@ footer{
                 width: 350px;
             }
         }
-        .tagline h3{
-            font-size: 26px;
+        .tagline{
+            margin-top: 200px;
+            h3{
+                font-size: 26px;
+            }
         }
     }
     footer{
         img{
             max-width: 200px;
         }
+    }
+}
+
+@media (max-width: 787px) {
+    body{
+        padding: 0;
+        .row{
+            margin: 0 auto;
+            width: 96%;
+        }
+        h2{
+            padding-top: 25px;
+        }
+    }
+    .features{
+        padding: 0 0 25px;
+    }
+    .messages, footer{
+        padding: 25px 0;
+    }
+    footer img{
+        max-width: 200px;
     }
 }
 
@@ -147,27 +176,6 @@ footer{
     }
 }
 
-@media (max-width: 787px) {
-    body{
-        padding: 0;
-        .row{
-            margin: 0 auto;
-            width: 96%;
-        }
-        h2{
-            padding-top: 25px;
-        }
-    }
-    .features{
-        padding: 0 0 25px;
-    }
-    .messages, footer{
-        padding: 25px 0;
-    }
-    footer img{
-        max-width: 200px;
-    }
-}
 
 /*
  * Large desktop
