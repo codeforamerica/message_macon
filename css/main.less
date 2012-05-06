@@ -54,7 +54,7 @@ header{
             font-size: 36px;
             font-weight: 300;
             line-height: 1.2em;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
         }
     }
     .gradient{
@@ -144,6 +144,31 @@ footer{
     }
 }
 
+@media (max-width: 767px) {
+    body{
+        padding: 0;
+        .row{
+            margin: 0 auto;
+            width: 96%;
+        }
+        h2{
+            padding-top: 25px;
+        }
+    }
+    .green{
+        background: url(/img/trash.png) no-repeat 92% 50%;
+    }
+    .features{
+        padding: 0 0 25px;
+    }
+    .messages, footer{
+        padding: 25px 0;
+    }
+    footer img{
+        max-width: 200px;
+    }
+}
+
 @media (max-width: 480px) {
     body{
         padding: 0;
@@ -166,6 +191,9 @@ footer{
     }
     .messages, footer{
         padding: 25px 0;
+    }
+    .messages .row{
+        margin-top: 0px;
     }
     footer img{
         max-width: 200px;
