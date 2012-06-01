@@ -3,16 +3,34 @@
 @green: #64a32f;
 @light: #fcfff9;
 
-body{
-    overflow-x: hidden;
-}
 h2{
     font-size: 28px;
     font-weight: 300;
     padding-bottom: 8px;
+    &.center{
+        text-align: center;
+    }
 }
+
 p{
     padding-right: 5px;
+}
+
+.background-image(@one, @two, @three){
+  background-image: -webkit-linear-gradient(left, @one, @two, @three);
+  background-image:    -moz-linear-gradient(left, @one, @two, @three);
+  background-image:     -ms-linear-gradient(left, @one, @two, @three);
+  background-image:      -o-linear-gradient(left, @one, @two, @three);
+}
+
+hr{
+  border: 0;
+  height: 1px;
+  width: 100%;
+  &.soften{
+      .background-image(rgba(0, 0, 0, .01), rgba(0, 0, 0, .1), rgba(0, 0, 0, .01));
+      border-bottom: 1px solid #fff;
+  }
 }
 
 header{
@@ -35,7 +53,7 @@ header{
     }
 }
 
-.green{
+.picture{
     background: url(/img/trash.png) no-repeat center center;
     background-size: cover;
     .row{
@@ -54,7 +72,7 @@ header{
             font-size: 36px;
             font-weight: 300;
             line-height: 1.2em;
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, .75);
+            text-shadow: 1px 1px 2px #000;
         }
     }
     .gradient{
@@ -69,13 +87,16 @@ header{
     #gradient > .vertical(#333, #111);
     border-top: 1px solid #292929;
     color: @light;
-    padding: 50px 0;
-    text-shadow: 1px 1px 2px #111;
+    padding: 30px 0;
+    text-shadow: 1px 1px 2px #000;
 }
 
-.messages{
+.steps{
     #gradient > .vertical(#fff, @light);
     padding: 25px 0 50px;
+    h2{
+        font-size: 32px;
+    }
     .row{
         margin-top: 25px;
     }
@@ -113,7 +134,7 @@ footer{
     h2{
         font-size: 24px;
     }
-    .green{
+    .picture{
         .row{
             height: 350px;
             img{
@@ -145,13 +166,13 @@ footer{
             padding-top: 25px;
         }
     }
-    .green{
+    .picture{
         background: url(/img/trash.png) no-repeat 92% 50%;
     }
     .features{
         padding: 0 0 25px;
     }
-    .messages, footer{
+    .steps, footer{
         padding: 25px 0;
     }
     footer img{
@@ -164,13 +185,13 @@ footer{
         padding: 0;
         .row{
             margin: 0 auto;
-            width: 96%;
+            padding: 0 10px;
         }
         h2{
             padding-top: 25px;
         }
     }
-    .green{
+    .picture{
         background: url(/img/trash.png) no-repeat 92% 50%;
         .row{
             height: 350px;
@@ -179,10 +200,10 @@ footer{
     .features{
         padding: 0 0 25px;
     }
-    .messages, footer{
+    .steps, footer{
         padding: 25px 0;
     }
-    .messages .row{
+    .steps .row{
         margin-top: 0px;
     }
     footer img{
@@ -195,7 +216,7 @@ footer{
  * Large desktop
  */
 @media (min-width: 1200px) {
-    .green{
+    .picture{
         .row{
             height: 475px;
             img{
