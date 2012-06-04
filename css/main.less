@@ -130,59 +130,7 @@ footer{
 }
 
 
-/*
- * Tablet
- */
-@media (max-width: 979px) and (min-width: 768px){
-    h2{
-        font-size: 24px;
-    }
-    .picture{
-        .row{
-            height: 350px;
-            img{
-                width: 350px;
-            }
-        }
-        .tagline{
-            margin-top: 200px;
-            h3{
-                font-size: 26px;
-            }
-        }
-    }
-    footer{
-        img{
-            max-width: 200px;
-        }
-    }
-}
-
-@media (max-width: 767px) {
-    body{
-        padding: 0;
-        .row{
-            margin: 0 auto;
-            width: 96%;
-        }
-        h2{
-            padding-top: 25px;
-        }
-    }
-    .picture{
-        background: url(/img/trash.png) no-repeat 92% 50%;
-    }
-    .features{
-        padding: 0 0 25px;
-    }
-    .steps, footer{
-        padding: 25px 0;
-    }
-    footer img{
-        max-width: 200px;
-    }
-}
-
+/* Phone */
 @media (max-width: 480px) {
     body{
         padding: 0;
@@ -214,11 +162,68 @@ footer{
     }
 }
 
+@media (max-width: 767px) {
+    body{
+        padding: 0;
+        .row{
+            margin: 0 auto;
+            width: 96%;
+        }
+        h2{
+            padding-top: 25px;
+        }
+    }
+    .picture{
+        background: url(/img/trash.png) no-repeat 92% 50%;
+    }
+    .features{
+        padding: 0 0 25px;
+    }
+    .steps, footer{
+        padding: 25px 0;
+    }
+    footer img{
+        max-width: 200px;
+    }
+}
 
-/*
- * Large desktop
- */
+
+/* Tablet */
+@media (max-width: 979px) and (min-width: 768px){
+    h2{
+        font-size: 24px;
+    }
+    .picture{
+        .row{
+            height: 350px;
+            img{
+                width: 350px;
+            }
+        }
+        .tagline{
+            margin-top: 200px;
+            h3{
+                font-size: 26px;
+            }
+        }
+    }
+    footer{
+        img{
+            max-width: 200px;
+        }
+    }
+}
+
+
+/* Desktop */
 @media (min-width: 1200px) {
+    h2{
+        font-size: 27px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 20px;
+    }
     .picture{
         .row{
             height: 475px;
@@ -227,11 +232,10 @@ footer{
             }
         }
     }
-    h2{
-        font-size: 27px;
-    }
-    p{
-        font-size: 14px;
-        line-height: 20px;
+    .steps{
+        padding: 50px 0 75px;
+        h2{
+            font-size: 40px;
+        }
     }
 }
