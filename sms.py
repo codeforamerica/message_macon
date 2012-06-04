@@ -9,6 +9,7 @@ if 'PRODUCTION_ENV' in os.environ:
     # Then we'll use the actual SeeClickFix endpoint.
     macon = three.city('macon')
 else:
+    # Otherwise, it's testing.
     macon = three.dev('http://seeclicktest.com/open311/v2')
 
 
