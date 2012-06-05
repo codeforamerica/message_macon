@@ -85,10 +85,21 @@ header{
 
 .features{
     #gradient > .vertical(#333, #111);
-    border-top: 1px solid #292929;
+    border-top: 1px solid #1d1d1d;
     color: @light;
     padding: 30px 0;
     text-shadow: 1px 1px 2px #000;
+    a{
+        border-bottom: 1px dotted #bbb;
+        color: #fff;
+        &:hover{
+            border-bottom: 1px solid #ddd;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    p{
+    }
 }
 
 .steps{
@@ -228,8 +239,8 @@ footer{
         font-size: 27px;
     }
     p{
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 1.4em;
     }
     .picture{
         .row{
@@ -243,6 +254,9 @@ footer{
         padding: 50px 0;
         h2{
             font-size: 40px;
+        }
+        p{
+            font-size: 14px;
         }
     }
 }
