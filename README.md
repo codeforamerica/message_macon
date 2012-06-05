@@ -32,3 +32,10 @@ Locally, you can `export` these environment variables in your terminal.
     export OPEN311_API_KEY=seeclickfix_api_key
     export SMS_USER=smsified_username
     export SMS_PASS=smsified_password
+
+### Production
+
+In order to actually connect with the SeeClickFix system, a
+`PRODUCTION_ENV` variable will also need to be set.
+
+    heroku config:add PRODUCTION_ENV=true
