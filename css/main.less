@@ -150,6 +150,7 @@ footer{
 /* Phone */
 @media (max-width: 480px) {
     body{
+        overflow-x: hidden;
         padding: 0;
         .row{
             margin: 0 auto;
@@ -163,19 +164,28 @@ footer{
         background: url(/img/trash.png) no-repeat 92% 50%;
         .row{
             height: 350px;
+            img{
+                max-width: 390px;
+            }
         }
     }
     .features{
         padding: 0 0 25px;
     }
-    .steps, footer{
+    .steps{
+        padding: 10px 0 20px;
+        img{
+            padding: 0 0 10px;
+        }
+        .row{
+            margin-top: 0px;
+        }
+    }
+    footer{
         padding: 25px 0;
-    }
-    .steps .row{
-        margin-top: 0px;
-    }
-    footer img{
-        max-width: 200px;
+        img{
+            max-width: 200px;
+        }
     }
 }
 
